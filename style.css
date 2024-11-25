@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+  --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  /*Font*/
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+body{
+  background-color: var(--Very-dark-blue-main-BG);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.conteiner{
+  background-color: var(--Very-dark-blue-card-BG);
+  width: 20em;
+  height: auto;
+  border-radius: 15px;
+}
+
+.conteiner-card{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.photo{
+  display: flex;
+  flex-direction: column;
+  padding: 1.2em;
+  gap: 1em;
+}
+
+.image-wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.equilibrium{
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*View Image*/
+
+.view{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+/*------*/
+.name-id{
+  font-size: 1.2rem;
+  color: var(--White);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.caption{
+  text-align: left;
+  padding: .3rem;
+  margin-left: .8rem;
+  color: var(--Soft-blue);
+}
+
+.card-details{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-size: .8rem;
+}
+
+.etherum, .date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Ajuste o espaçamento */
+}
+
+.etherum{
+  gap: 5px;
+  color: var(--Cyan);
+}
+
+.date{
+  color: var(--Soft-blue);
+}
+
+.card-user{
+  border-top: 1px var(--Very-dark-blue-line) solid;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+
+.card-user img{
+  border: 1px white solid;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: auto;
+}
+
+.card-user span{
+  color: var(--Soft-blue);
+}
+
+.card-user a{
+  color: var(--White);
+  text-decoration: none;
+}
+
+/*Active states*/
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--Cyan);
+  opacity: 0; 
+  transition: 0.3s ease; 
+  z-index: 0; 
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.image-wrapper:hover .view {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.image-wrapper:hover::before {
+  opacity: 0.5;
+}
+
+.name-id:hover{
+  color: var(--Cyan);
+  cursor: pointer;
+}
+
+.card-user a:hover{
+  color: var(--Cyan);
+}
